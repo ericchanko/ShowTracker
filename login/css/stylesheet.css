@@ -1,0 +1,108 @@
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+  background-color: #ffffff;
+  
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background: linear-gradient(to bottom, #33ccff 0%, #cc0099 85%);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 300px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+/*Center the container inside the body container with respect to viewport*/
+body{
+  display: Flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #33ccff 0%, #cc0099 85%);
+  height: 100vh;
+
+}
+
+#username
+{
+  color: lightgray;
+  width: 100%;
+  display: inline-block;
+}
+#username:hover {
+ color:black;
+}
+
+#password
+{
+  color: lightgray;
+  width: 100%;
+  display: inline-block;
+}
+
+#password:hover
+{
+  color:black;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 24px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+
+
+.fullcontainer{
+  height: 100vh;
+}
+/* Add padding to containers */
+.logincontainer {
+  text-align: center;
+  padding: 0px;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (min-width: 900px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+  body{
+    background-image: url(https://external-preview.redd.it/VqCCOer95M8hxRA1fQ0h7GmsKNDtmX9CvulBEerypSw.png?auto=webp&s=4192b484f4c3003cc8ada14d781e99644e015663);
+    background-size: 100% 100%;
+  }
+  form{
+    
+  }
+}
