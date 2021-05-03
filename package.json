@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/ericchanko/acit2911#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
   }
 }
