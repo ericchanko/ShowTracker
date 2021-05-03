@@ -1,21 +1,45 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-
-// modules
-const authController = require("./controller/auth_controller");
-
-
-app.set('view engine', 'ejs');
-
-
+const ejsLayouts = require("express-ejs-layouts");
+const session = require("express-session");
 
 app.use(express.static(path.join(__dirname, "public")));
 
+const authController = require("./controller/auth_controller");
+const animeController = require("./controller/anime_controller");
+const passport = require("./middleware/passport");
+app.use(express.urlencoded({ extended: true }));
+
+app.use(
+    session({
+        secret: "secret",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            httpOnly: true,
+            secure: false,
+            maxAge: 24 * 60 * 60 * 1000,
+        },
+    })
+);
+
+app.use(passport.initialize());
+
+app.use(passport.session());
+
+app.use(ejsLayouts);
+
+app.set("view engine", "ejs");
+
+// Routes
+
 app.get("/", (req, res) => res.send("Hello World. This page is currently under development!"));
+
+app.get("/animelist", animeController.list);
+
 app.get("/login", authController.login);
-
-
+app.post("/login", authController.loginSubmit);
 
 app.listen(3000, function() {
     console.log(

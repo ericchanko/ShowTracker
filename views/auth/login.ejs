@@ -1,22 +1,18 @@
-<head>
-    <link href= "/assets/styles.css" rel="stylesheet" type="text/css" />
-</head>
-
-<form action="action_page.php" method="post" class="fullcontainer">
+<form action="/login" method="POST" class="fullcontainer">
     <div class="imgcontainer">
-        <img src="/assets/image/loginwaifu.png" alt="loginwaifu" class="loginwaifu" height="200" width="200">
+        <img src="/image/loginwaifu.png" alt="loginwaifu" class="loginwaifu" height="200" width="200">
     </div>
 
     <div class="logincontainer">
         <div id="username">
             <label for="uname"><b>Username:　</b></label>
             <br>
-            <input type="text" placeholder="Enter Username" name="uname" size="300" required>
+            <input type="text" placeholder="Enter Username" name="username" size="300" required>
         </div>
         <div id="password">
-            <label for="psw"><b>Password：　</b></label>
+            <label for="psw"><b>Password:　</b></label>
             <br>
-            <input type="password" placeholder="Enter Password" name="psw" size ="300" required>
+            <input type="password" placeholder="Enter Password" name="password" size ="300" required>
         </div >
         <div id="submit">
             <button type="submit">Login</button>
@@ -27,9 +23,9 @@
             </label>
         </div>
         <div>Log in with </div>
-        <div> <img src="/assets/image/fbicon.png" alt="" height = "50" width="50">
-            <img src="/assets/image/googleicon.png" alt="" height = "50" width="50">
-            <img src="/assets/image/instaicon.png" alt="" height = "50" width="50">
+        <div> <img src="/image/fbicon.png" alt="" height = "50" width="50">
+            <img src="/image/googleicon.png" alt="" height = "50" width="50">
+            <img src="/image/instaicon.png" alt="" height = "50" width="50">
         </div>
 
     </div>
