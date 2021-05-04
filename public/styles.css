@@ -34,7 +34,7 @@ button:hover {
 
 
 /*Center the container inside the body container with respect to viewport*/
-body{
+#loginbody{
   display: Flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +98,7 @@ img.avatar {
   .cancelbtn {
     width: 100%;
   }
-  body{
+  #loginbody{
     background-image: url(https://external-preview.redd.it/VqCCOer95M8hxRA1fQ0h7GmsKNDtmX9CvulBEerypSw.png?auto=webp&s=4192b484f4c3003cc8ada14d781e99644e015663);
     background-size: 100% 100%;
   }
