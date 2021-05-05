@@ -158,5 +158,17 @@ a:visited{
   padding-left: 0;
   width:80%;
   font-size: large;
+}
+.imagecontainer
+{
+ position: relative;
+ text-align: center;
+}
 
+.image_bottom_text
+{
+position: absolute;
+bottom: 8px;
+right: 150px;
+color: white;
 }
