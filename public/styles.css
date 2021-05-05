@@ -1,10 +1,13 @@
+
+/*
+this is the block of login css styling
+*/
 /* Bordered form */
 form {
   border: 3px solid #f1f1f1;
   background-color: #ffffff;
   
 }
-
 /* Full-width inputs */
 input[type=text], input[type=password] {
   width: 300px;
@@ -14,7 +17,6 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
 /* Set a style for all buttons */
 button {
   background: linear-gradient(to bottom, #33ccff 0%, #cc0099 85%);
@@ -25,14 +27,10 @@ button {
   cursor: pointer;
   width: 300px;
 }
-
 /* Add a hover effect for buttons */
 button:hover {
   opacity: 0.8;
 }
-
-
-
 /*Center the container inside the body container with respect to viewport*/
 #loginbody{
   display: Flex;
@@ -42,7 +40,6 @@ button:hover {
   height: 100vh;
 
 }
-
 #username
 {
   color: lightgray;
@@ -52,33 +49,26 @@ button:hover {
 #username:hover {
  color:black;
 }
-
 #password
 {
   color: lightgray;
   width: 100%;
   display: inline-block;
 }
-
 #password:hover
 {
   color:black;
 }
-
 /* Center the avatar image inside this container */
 .imgcontainer {
   text-align: center;
   margin: 24px 0 24px 0;
 }
-
 /* Avatar image */
 img.avatar {
   width: 40%;
   border-radius: 50%;
 }
-
-
-
 .fullcontainer{
   height: 100vh;
 }
@@ -87,8 +77,6 @@ img.avatar {
   text-align: center;
   padding: 0px;
 }
-
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (min-width: 900px) {
   span.psw {
@@ -105,4 +93,70 @@ img.avatar {
   form{
     
   }
+}
+
+/*
+this is the end of log in css styling
+*/
+
+/*
+this block of code handles the main watchlist 
+*/
+#webtitle{
+  padding-left: 0;
+}
+#username
+{
+  text-align: center;
+  padding-right: 0;
+}
+#wlnav{
+  display: flex;
+  background-color: #2e51a2;
+  color:white;
+  font-size: larger;
+  width:80%;
+  justify-content: space-evenly;
+}
+#wlhead{
+  display: flex;
+  color: #2e51a2;
+}
+#quicklinknav{
+  display: flex;
+
+}
+
+ul>li {
+  font-size: larger;
+  padding-right: 4%;
+  list-style: none;
+}
+#contentbox
+{
+  /*padding-left: 20%;*/
+}
+
+a:link{
+  color:white; 
+}
+a:visited{
+  color:white;
+}
+#listcontainer{
+  display: flex;
+  width:80%;
+  font-size: x-large;
+  justify-content: space-evenly;
+  background-color:#e1e7f5;
+}
+.animelist{
+  align-content: center;
+  display: flex;
+  background-color:#e1e7f5;
+  border: solid 1px ;
+  padding-left: 0;
+  width:80%;
+  font-size: large;
+
 }
