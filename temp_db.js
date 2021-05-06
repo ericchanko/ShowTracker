@@ -32,10 +32,6 @@ const userModel = {
                 return person
             }
         }
-        // if (user) {
-        //     return user;
-        // }
-        //I commment this out ^ (Alex)
         //TODO: same thing as findOne
         return null;
     },

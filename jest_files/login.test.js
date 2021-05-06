@@ -17,16 +17,16 @@ const user_by_id = require('../controller/user_controller').getUserById;
 test('getting user by ID', () => {
     expect(user_by_id(1).name).toBe('Alex');
 });
+
 //Finds user by ID invalid
 test('Inputting invalid ID', () => {
     expect(user_by_id(100)).toBeNull();
 });
 
 //Google login method
-
 const google_login = require('../controller/user_controller').getGoogleUserByUsername;
 
 //Logins with google valid
 test('Logins with google account', () => {
-    expect(google_login('1', 'Alex', 'mockup@gmail.com')).not.toBeUndefined();
+    expect(google_login('1', 'Alex', 'mockup')).not.toBeUndefined();
 });
