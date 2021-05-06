@@ -32,7 +32,6 @@ app.use(ejsLayouts);
 
 app.set("view engine", "ejs");
 
-
 // Routes
 app.get("/", animeController.home);
 app.get("/list", animeController.list);
