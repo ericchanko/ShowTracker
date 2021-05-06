@@ -32,19 +32,21 @@ const userModel = {
                 return person
             }
         }
-        if (user) {
-            return user;
-        }
+        // if (user) {
+        //     return user;
+        // }
+        //I commment this out ^ (Alex)
         //TODO: same thing as findOne
         return null;
     },
+
     findOrAddGoogleUser: (id, name, googleUsername) => {
         const user = database.find((user) => user.googleUsername === googleUsername);
         if (user) {
-            
-          return user;
+
+            return user;
         }
-        const newUser = {id: id, name: name, googleUsername: googleUsername}
+        const newUser = { id: id, name: name, googleUsername: googleUsername }
         database.push(newUser);
         return newUser;
     },
