@@ -32,6 +32,7 @@ app.use(ejsLayouts);
 
 app.set("view engine", "ejs");
 
+
 // Routes
 
 app.get("/", (req, res) => res.send("Hello World. This page is currently under development!"));
@@ -40,6 +41,15 @@ app.get("/animelist", animeController.list);
 
 app.get("/login", authController.login);
 app.post("/login", authController.loginSubmit);
+
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+app.get('/auth/google/callback',
+    passport.authenticate('google', { failureRedirect: '/login' }),
+    function(req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/animelist');
+    });
+app.post('/auth/google', authController.googleSubmit);
 
 app.listen(3000, function() {
     console.log(

@@ -24,7 +24,7 @@ const userModel = {
             }
         }
         //TODO: redirect user to registration if user not found
-        throw new Error(`Couldn't find user with username: ${username}`)
+        return null;
     },
     findById: (id) => {
         for (const person of database) {
@@ -36,7 +36,17 @@ const userModel = {
             return user;
         }
         //TODO: same thing as findOne
-        throw new Error(`Couldn't find user with id: ${id}`);
+        return null;
+    },
+    findOrAddGoogleUser: (id, name, googleUsername) => {
+        const user = database.find((user) => user.googleUsername === googleUsername);
+        if (user) {
+            
+          return user;
+        }
+        const newUser = {id: id, name: name, googleUsername: googleUsername}
+        database.push(newUser);
+        return newUser;
     },
 };
 

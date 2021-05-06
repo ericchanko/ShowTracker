@@ -1,5 +1,7 @@
 const passport = require("passport");
+require("dotenv").config()
 const LocalStrategy = require("passport-local").Strategy;
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const userController = require("../controller/user_controller");
 const localLogin = new LocalStrategy(
   {
@@ -16,6 +18,25 @@ const localLogin = new LocalStrategy(
   }
 );
 
+const googleLogin = new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    scope: "https://www.googleapis.com/auth/userinfo.profile",
+    callbackURL: "http://localhost:3000/auth/google/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    const user = userController.getGoogleUserByUsername(profile.id, profile.displayName, profile.username);
+    if (user) {
+        done(null, user)
+    }
+    else {
+        done(null, false, {
+            message: "Your login details are not valid. Please try again",
+        });
+    }
+  }
+);
+
 passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
@@ -29,4 +50,4 @@ passport.deserializeUser(function (id, done) {
   }
 });
 
-module.exports = passport.use(localLogin);
+module.exports = passport.use(localLogin).use(googleLogin);

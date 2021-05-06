@@ -11,6 +11,13 @@ let authController = {
           failureRedirect: "/login",
         })(req, res, next);
       },
+
+    googleSubmit: (req, res, next) => {
+        passport.authenticate("google", {
+          successRedirect: "/animelist",
+          failureRedirect: "/login",
+        })(req, res, next);
+    },
 };
 
 module.exports = authController;
