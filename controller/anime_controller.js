@@ -1,7 +1,7 @@
 let animeController = {
     list: (req, res) => {
-        res.send("success");
+        res.render("anime/list");
     },
-}
+};
 
-module.exports = animeController
+module.exports = animeController;
