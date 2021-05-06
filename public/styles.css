@@ -4,10 +4,13 @@ this is the block of login css styling
 */
 /* Bordered form */
 form {
+  border:none !important;
+  opacity: 0.95;
   border: 3px solid #f1f1f1;
   background-color: #ffffff;
   
 }
+
 /* Full-width inputs */
 input[type=text], input[type=password] {
   width: 300px;
@@ -19,7 +22,8 @@ input[type=text], input[type=password] {
 }
 /* Set a style for all buttons */
 button {
-  background: linear-gradient(to bottom, #33ccff 0%, #cc0099 85%);
+  background-color: #ffa69e;
+  background-image: linear-gradient(315deg, #ffa69e 0%, #5d4954 74%);
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -36,7 +40,6 @@ button:hover {
   display: Flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #33ccff 0%, #cc0099 85%);
   height: 100vh;
 
 }
@@ -61,6 +64,7 @@ button:hover {
 }
 /* Center the avatar image inside this container */
 .imgcontainer {
+  padding-top: 20%;
   text-align: center;
   margin: 24px 0 24px 0;
 }
@@ -76,6 +80,7 @@ img.avatar {
 .logincontainer {
   text-align: center;
   padding: 0px;
+ 
 }
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (min-width: 900px) {
@@ -87,11 +92,12 @@ img.avatar {
     width: 100%;
   }
   #loginbody{
-    background-image: url(https://external-preview.redd.it/VqCCOer95M8hxRA1fQ0h7GmsKNDtmX9CvulBEerypSw.png?auto=webp&s=4192b484f4c3003cc8ada14d781e99644e015663);
+    background-image: url(https://images.unsplash.com/photo-1519638399535-1b036603ac77?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb);
     background-size: 100% 100%;
   }
-  form{
-    
+ 
+  form:hover{
+    opacity: 1;
   }
 }
 
