@@ -8,7 +8,6 @@ form {
   opacity: 0.95;
   border: 3px solid #f1f1f1;
   background-color: #ffffff;
-  
 }
 
 /* Full-width inputs */
@@ -80,7 +79,7 @@ img.avatar {
 .logincontainer {
   text-align: center;
   padding: 0px;
- 
+
 }
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (min-width: 900px) {
@@ -95,7 +94,7 @@ img.avatar {
     background-image: url(https://images.unsplash.com/photo-1519638399535-1b036603ac77?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb);
     background-size: 100% 100%;
   }
- 
+
   form:hover{
     opacity: 1;
   }
@@ -106,7 +105,7 @@ this is the end of log in css styling
 */
 
 /*
-this block of code handles the main watchlist 
+this block of code handles the main watchlist
 */
 #webtitle{
   padding-left: 0;
@@ -144,7 +143,7 @@ ul>li {
 }
 
 a:link{
-  color:white; 
+  color:white;
 }
 a:visited{
   color:white;

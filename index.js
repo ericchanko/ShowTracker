@@ -34,10 +34,11 @@ app.set("view engine", "ejs");
 
 
 // Routes
-
-app.get("/", (req, res) => res.send("Hello World. This page is currently under development!"));
-
+app.get("/", animeController.home);
 app.get("/list", animeController.list);
+app.get("/about", (req, res) => {
+    res.send("This page is currently under construction!")
+});
 
 app.get("/login", authController.login);
 app.post("/login", authController.loginSubmit);
