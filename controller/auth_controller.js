@@ -7,14 +7,14 @@ let authController = {
 
     loginSubmit: (req, res, next) => {
         passport.authenticate("local", {
-          successRedirect: "/animelist",
+          successRedirect: "/list",
           failureRedirect: "/login",
         })(req, res, next);
       },
 
     googleSubmit: (req, res, next) => {
         passport.authenticate("google", {
-          successRedirect: "/animelist",
+          successRedirect: "/list",
           failureRedirect: "/login",
         })(req, res, next);
     },
