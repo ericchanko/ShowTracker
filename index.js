@@ -37,7 +37,7 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => res.send("Hello World. This page is currently under development!"));
 
-app.get("/animelist", animeController.list);
+app.get("/list", animeController.list);
 
 app.get("/login", authController.login);
 app.post("/login", authController.loginSubmit);
