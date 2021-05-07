@@ -5,7 +5,7 @@ this is the block of login css styling
 /* Bordered form */
 form {
   border:none !important;
-  opacity: 0.95;
+  opacity: 0.85;
   border: 3px solid #f1f1f1;
   background-color: #ffffff;
 }
@@ -91,7 +91,8 @@ img.avatar {
     width: 100%;
   }
   #loginbody{
-    background-image: url(https://images.unsplash.com/photo-1519638399535-1b036603ac77?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb);
+    margin: -8px;
+    background-image:url("image/wallpaper.png");
     background-size: 100% 100%;
   }
 
