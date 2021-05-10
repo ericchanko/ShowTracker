@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap");
 
 body {
-    background: #14213d;
+    background-image: url("https://wallpaperaccess.com/full/2873577.png");
     width: 100vw;
     height: auto;
     margin: 0;
@@ -13,7 +13,6 @@ nav {
     display: block;
     justify-content: center;
     width: 100%;
-
 }
 
 nav .menu-container {
@@ -34,9 +33,12 @@ nav .menu-container {
     animation: enlargeMenuItem 1s forwards;
 }
 
-.container {
+.container, .about {
     width: 100%;
     height: 100vh;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,14 +93,64 @@ nav .menu-container {
     right: -0.5em;
 }
 
-.white {
-    background-image: url("https://wallpapercave.com/wp/wp4051806.png");
-    width: 100vw;
+
+.button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 108px;
+    text-align: center;
+
+    font-size:18px;
+    text-decoration:none;
+    color:white;
+    border:white 1px solid;
+    padding:10px 20px;
+    border-radius:10px;
+    opacity: 0;
+    animation: mainFadeIn 1s forwards;
+    animation-delay: 3.5s;
 }
 
-.description {
-    left: 100px;
+.button:hover {
+    background:#ffb510;
+    color:#fff;
+    border:#ffb510 1px solid;
 }
+
+.about {
+    background-image: url("http://wallpoper.com/images/00/36/17/48/nichijou_00361748.png");
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    color: #fff;
+}
+
+.about-title {
+    grid-column: 2/4;
+    justify-self: center;
+    text-align: center;
+    margin-top: 4em;
+}
+
+.about-desc {
+    margin-top: 6em;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.about-pic {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    margin-left: 2em;
+    /*place holder pic until we get smthn better*/
+    background-image: url("https://blog.optimalworkshop.com/wp-content/uploads/2020/03/10-examples-of-great-website-navigation-and-why-they-are-awesome.png");
+}
+
+
+
+
+
 
 
 /* CSS animation keyframes */
@@ -134,7 +186,7 @@ nav .menu-container {
         width: 20px;
         height: 20px;
         background: #e9d856;
-        border: 0 solid #222;
+        border: 0 solid #e9d856;
         bottom: 15px;
     }
 }
