@@ -1,50 +1,30 @@
-let database = [
-
-    {
-        id: 1,
-        name: "Alex",
-        username: "Alex",
-        password: "a",
-    },
-
-    {
-        id: 2,
-        name: "Steven",
-        username: "Steven",
-        password: "s",
-    }
-];
-
-
 const userModel = {
-    findOne: (username) => {
-        for (const person of database) {
-            if (person.username === username) {
-                return person
-            }
+    find_user = (username) => {
+        try {
+            let statement = db.prepare('SELECT USR_username, USR_name FROM users WHERE USR_username = ?').get(username);
+            return statement.USR_name;
+        } catch (TypeError) {
+            return null;
         }
-        //TODO: redirect user to registration if user not found
-        return null;
+
     },
-    findById: (id) => {
-        for (const person of database) {
-            if (person.id === id) {
-                return person
-            }
+    get_user_by_id = (user_id) => {
+        try {
+            let statement = db.prepare(`SELECT * FROM users WHERE USR_ID = ?`).get(user_id);
+            return statement.USR_username;
+        } catch (TypeError) {
+            return null;
         }
-        //TODO: same thing as findOne
-        return null;
+
     },
 
-    findOrAddGoogleUser: (id, name, googleUsername) => {
-        const user = database.find((user) => user.googleUsername === googleUsername);
-        if (user) {
-
-            return user;
+    find_user_by_gmail = (gmail_acc) => {
+        try {
+            let statement = db.prepare('SELECT USR_GMAIL, USR_name FROM users WHERE USR_GMAIL = ?').get(gmail_acc);
+            return statement.USR_name;
+        } catch (TypeError) {
+            return 'Error: gmail account not found in Database.';
         }
-        const newUser = { id: id, name: name, googleUsername: googleUsername }
-        database.push(newUser);
-        return newUser;
     },
 };
 
