@@ -1,5 +1,4 @@
 let database = [
-
     {
         id: 1,
         name: "Alex",
@@ -12,6 +11,13 @@ let database = [
         name: "Steven",
         username: "Steven",
         password: "s",
+    },
+
+    {
+        id: 3,
+        name: "a",
+        username: "a",
+        password: "a",
     }
 ];
 
@@ -41,10 +47,9 @@ const userModel = {
     findOrAddGoogleUser: (id, name, googleUsername) => {
         const user = database.find((user) => user.googleUsername === googleUsername);
         if (user) {
-            
           return user;
         }
-        const newUser = {id: id, name: name, googleUsername: googleUsername}
+        const newUser = {id: id, name: name, googleUsername: googleUsername};
         database.push(newUser);
         return newUser;
     },
