@@ -17,6 +17,8 @@ let remove_anime = (anime_id) => {
 
 }
 
+console.log(list_anime());
+// add_anime('Todoroki', 'Blue hair man', 'https://wwww.google.com/gere');
 module.exports = {
     list_anime,
     add_anime,

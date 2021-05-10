@@ -1,32 +1,19 @@
-//user and password method
-const user_and_pass = require('../controller/user_controller').getUserByUsernameAndPassword;
+// user and password method
+const sqlite_user = require('../sqlite_users').get_user_by_id;
 
-//User and password method invalid
-test('Logins with the incorrect login info', () => {
-    expect(user_and_pass('Alex', 'incorrectPassword')).toBeNull();
+// User and password method invalid
+test('Finds the user based on USR_ID', () => {
+    expect(sqlite_user(1)).toBe('aamog');
 });
 
-//User and password method valid
-test('Logins with the correct login info', () => {
-    expect(user_and_pass('Alex', 'a')).not.toBeUndefined();
+test('Finds the user based on USR_ID (incorrectly)', () => {
+    expect(sqlite_user(100)).toBeNull();
 });
 
-//Find user by ID 
-const user_by_id = require('../controller/user_controller').getUserById;
-//Finds user by ID valid
-test('getting user by ID', () => {
-    expect(user_by_id(1).name).toBe('Alex');
-});
 
-//Finds user by ID invalid
-test('Inputting invalid ID', () => {
-    expect(user_by_id(100)).toBeNull();
-});
+// console.log(user_and_pass(1));
 
-//Google login method
-const google_login = require('../controller/user_controller').getGoogleUserByUsername;
-
-//Logins with google valid
-test('Logins with google account', () => {
-    expect(google_login('1', 'Alex', 'mockup')).not.toBeUndefined();
-});
+// //User and password method valid
+// test('Logins with the correct login info', () => {
+//     expect(user_and_pass('Alex', 'a')).not.toBeUndefined();
+// });

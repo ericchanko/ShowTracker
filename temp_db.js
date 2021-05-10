@@ -15,7 +15,6 @@ const userModel = {
         } catch (TypeError) {
             return null;
         }
-
     },
 
     find_user_by_gmail = (gmail_acc) => {
