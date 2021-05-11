@@ -151,12 +151,21 @@ nav .menu-container {
 }
 
 
-/* Login Page CSS - based off of adobe login page */
+/* ================ Login Page CSS - based off of adobe login page ===========*/
 .login-page {
     background-image: url("https://getwallpapers.com/wallpaper/full/8/6/5/419846.jpg");
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+}
+
+.back-home {
+    position: absolute;
+    top: 1em;
+    left: 2em;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
 }
 
 .login-container, .login-desc-box {
