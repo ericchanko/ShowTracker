@@ -18,6 +18,14 @@ let authController = {
           failureRedirect: "/login",
         })(req, res, next);
     },
+
+    register: (req, res) => {
+        res.render("auth/register")
+    },
+
+    registerSubmit: (req, res, next) => {
+        res.send("To be implemented!")
+    },
 };
 
 module.exports = authController;

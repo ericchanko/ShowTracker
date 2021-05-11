@@ -1,5 +1,4 @@
 let database = [
-
     {
         id: 1,
         name: "Alex",
@@ -12,8 +11,17 @@ let database = [
         name: "Steven",
         username: "Steven",
         password: "s",
+    },
+
+    {
+        id: 3,
+        name: "a",
+        username: "a",
+        password: "a",
     }
 ];
+
+
 
 
 const userModel = {
@@ -39,10 +47,16 @@ const userModel = {
     findOrAddGoogleUser: (id, name, googleUsername) => {
         const user = database.find((user) => user.googleUsername === googleUsername);
         if (user) {
+<<<<<<< HEAD
 
             return user;
         }
         const newUser = { id: id, name: name, googleUsername: googleUsername }
+=======
+          return user;
+        }
+        const newUser = {id: id, name: name, googleUsername: googleUsername};
+>>>>>>> renovate
         database.push(newUser);
         return newUser;
     },

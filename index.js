@@ -42,6 +42,10 @@ app.get("/about", (req, res) => {
 app.get("/login", authController.login);
 app.post("/login", authController.loginSubmit);
 
+app.get("/register", authController.register);
+app.post("/register", authController.registerSubmit);
+
+
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 app.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/login' }),
