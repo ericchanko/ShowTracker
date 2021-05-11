@@ -5,10 +5,8 @@ let get_user_by_id = (user_id) => {
 
     try {
         let statement = db.prepare(`SELECT * FROM users WHERE USR_ID = ?`).get(user_id);
-        db.close();
         return statement.USR_username;
     } catch (TypeError) {
-        db.close();
         return null;
     }
 };
