@@ -51,7 +51,6 @@ let find_user_by_gmail = (gmail_acc) => {
     }
 
 }
-console.log(list_users());
 
 module.exports = {
     get_user_by_id,

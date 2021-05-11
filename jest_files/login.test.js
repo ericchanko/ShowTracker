@@ -1,3 +1,4 @@
+// Old Code.
 // // user and password method
 // const sqlite_user = require('../sqlite_users').get_user_by_id;
 
@@ -17,3 +18,10 @@
 // // test('Logins with the correct login info', () => {
 // //     expect(user_and_pass('Alex', 'a')).not.toBeUndefined();
 // // });
+
+
+const find_user_by_id = require('../sqlite_users').get_user_by_id;
+
+test('Retrives username based on id.', () => {
+    expect(find_user_by_id(1)).toBe('aamog');
+});
