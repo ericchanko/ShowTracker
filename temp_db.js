@@ -22,6 +22,8 @@ let database = [
 ];
 
 
+
+
 const userModel = {
     findOne: (username) => {
         for (const person of database) {
