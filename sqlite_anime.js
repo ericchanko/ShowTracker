@@ -14,11 +14,10 @@ let add_anime = (anime_title, anime_desc, anime_pic) => {
 let remove_anime = (anime_id) => {
     let statement = db.prepare(`DELETE FROM animes WHERE ANI_ID = ? `);
     return statement.run(anime_id);
-
 }
 
 console.log(list_anime());
-// add_anime('Todoroki', 'Blue hair man', 'https://wwww.google.com/gere');
+
 module.exports = {
     list_anime,
     add_anime,

@@ -37,8 +37,6 @@ let find_user = (username) => {
         db.close();
         return null;
     }
-
-
 }
 
 let find_user_by_gmail = (gmail_acc) => {
@@ -55,6 +53,7 @@ let find_user_by_gmail = (gmail_acc) => {
     }
 
 }
+console.log(list_users());
 
 module.exports = {
     get_user_by_id,
