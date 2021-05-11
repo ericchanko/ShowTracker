@@ -47,19 +47,14 @@ const userModel = {
     findOrAddGoogleUser: (id, name, googleUsername) => {
         const user = database.find((user) => user.googleUsername === googleUsername);
         if (user) {
-<<<<<<< HEAD
-
             return user;
         }
-        const newUser = { id: id, name: name, googleUsername: googleUsername }
-=======
-          return user;
-        }
         const newUser = {id: id, name: name, googleUsername: googleUsername};
->>>>>>> renovate
         database.push(newUser);
         return newUser;
     },
 };
+
+// pass //
 
 module.exports = { userModel };
