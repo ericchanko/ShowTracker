@@ -9,6 +9,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const authController = require("./controller/auth_controller");
 const animeController = require("./controller/anime_controller");
 const passport = require("./middleware/passport");
+const { ensureAuthenticated, forwardAuthenticated } = require("./middleware/check_auth");
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
@@ -33,21 +34,21 @@ app.use(ejsLayouts);
 app.set("view engine", "ejs");
 
 // Routes
-app.get("/", animeController.home);
-app.get("/list", animeController.list);
-app.get("/about", (req, res) => {
+app.get("/", forwardAuthenticated, animeController.home);
+app.get("/list", ensureAuthenticated, animeController.list);
+app.get("/about", forwardAuthenticated, (req, res) => {
     res.send("This page is currently under construction!")
 });
 
-app.get("/login", authController.login);
+app.get("/login", forwardAuthenticated, authController.login);
 app.post("/login", authController.loginSubmit);
 
-app.get("/register", authController.register);
+app.get("/register", forwardAuthenticated, authController.register);
 app.post("/register", authController.registerSubmit);
 
 
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
-app.get('/auth/google/callback',
+app.get('/auth/google', forwardAuthenticated, passport.authenticate('google', { scope: ['profile'] }));
+app.get('/auth/google/callback', forwardAuthenticated,
     passport.authenticate('google', { failureRedirect: '/login' }),
     function(req, res) {
         // Successful authentication, redirect home.
