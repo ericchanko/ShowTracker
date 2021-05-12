@@ -12,7 +12,6 @@ const getUserByUsernameAndPassword = (username, password) => {
 };
 const getUserById = (id) => {
     let user = userModel.findById(id);
-    console.log(user);
     if (user) {
         return user;
     }

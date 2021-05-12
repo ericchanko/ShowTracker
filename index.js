@@ -34,9 +34,9 @@ app.use(ejsLayouts);
 app.set("view engine", "ejs");
 
 // Routes
-app.get("/", forwardAuthenticated, animeController.home);
+app.get("/",  animeController.home);
 app.get("/list", ensureAuthenticated, animeController.list);
-app.get("/about", forwardAuthenticated, (req, res) => {
+app.get("/about",  (req, res) => {
     res.send("This page is currently under construction!")
 });
 
