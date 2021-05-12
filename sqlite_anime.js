@@ -23,8 +23,6 @@ let remove_anime = (anime_id) => {
     } else {
         return null;
     }
-
-
 }
 
 console.log(list_anime());

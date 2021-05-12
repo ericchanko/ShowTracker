@@ -19,7 +19,11 @@
 //     expect(user_and_pass('Alex', 'a')).not.toBeUndefined();
 // });
 
-//Test Driven Development
+
+
+//Test Driven Development//
+
+//Users//
 const find_user_by_id = require('../sqlite_users').get_user_by_id;
 
 test('Retrives username based on id.', () => {
@@ -39,25 +43,3 @@ test('Retrieves name based on gmail email', () => {
 test('Retrieves name based on gmail email (Fail on purpose.)', () => {
     expect(find_by_gmail('alexhong@hmil.com')).toBeNull();
 });
-
-//Anime
-const add_anime = require('../sqlite_anime').add_anime;
-// test('add anime. SUpposed to fail', () => {
-test('Adds anime, fail case', () => {
-    expect(add_anime('Yahari Ore no Seishun Love Comedy wa Machigatteiru', 'test', 'test')).toBeNull();
-});
-
-test('Adds anime, pass case', () => {
-    expect(add_anime('Zoruto', 'test', 'test')).toBe('Anime added successfully');
-});
-
-
-const remove_anime = require('../sqlite_anime').remove_anime;
-
-test('removes anime. pass case.', () => {
-    expect(remove_anime(49)).toBe('Anime removed.');
-})
-
-test('removes anime. fail case.', () => {
-    expect(remove_anime(49)).toBeNull();
-})
