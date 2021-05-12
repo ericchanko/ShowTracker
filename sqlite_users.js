@@ -17,6 +17,7 @@ let add_user = (user_name, user_username, user_password, user_gmail) => {
     insert.run(user_name, user_username, user_password, user_gmail);
     db.close();
 }
+
 let list_users = () => {
     const db = require('better-sqlite3')('./database/users.db');
     let statement = db.prepare('SELECT * FROM users').all();
@@ -41,9 +42,7 @@ let find_user_by_gmail = (gmail_acc) => {
         return statement.USR_name;
     } catch (TypeError) {
         return null;
-
     }
-
 }
 
 module.exports = {
