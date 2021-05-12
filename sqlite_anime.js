@@ -1,7 +1,7 @@
 const db = require('better-sqlite3')('./database/anime.db');
 
 let list_anime = () => {
-    let statement = db.prepare('SELECT ANI_ID,ANI_title,ANI_desc FROM anime').all();
+    let statement = db.prepare('SELECT * FROM anime').all();
     return statement;
 }
 
@@ -27,7 +27,7 @@ let remove_anime = (anime_id) => {
 
 }
 
-console.log(remove_anime(49));
+console.log(list_anime());
 
 module.exports = {
     list_anime,
