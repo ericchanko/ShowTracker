@@ -19,8 +19,6 @@
 //     expect(user_and_pass('Alex', 'a')).not.toBeUndefined();
 // });
 
-
-
 //Test Driven Development//
 
 //Users//
