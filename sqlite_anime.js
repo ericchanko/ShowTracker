@@ -1,4 +1,6 @@
-const db = require('better-sqlite3')('./database/anime.db');
+const { add_user } = require('./sqlite_users');
+
+const db = require('better-sqlite3')('./database/anime_watchlist.db');
 
 let list_anime = () => {
     let statement = db.prepare('SELECT * FROM anime').all();
@@ -25,7 +27,8 @@ let remove_anime = (anime_id) => {
     }
 }
 
-console.log(list_anime());
+// console.log(list_anime());
+// add_anime('Naruto', 'A ninja', 'https://google.com/');
 
 module.exports = {
     list_anime,
