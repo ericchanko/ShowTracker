@@ -28,9 +28,8 @@ const googleLogin = new GoogleStrategy({
     callbackURL: "http://localhost:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    const user = userController.getGoogleUserByUsername(profile.id, profile.displayName, profile.username);
+    const user = userController.getGoogleUserById(profile.id, profile.displayName, profile.name);
     if (user) {
-
         done(null, user)
     }
     else {

@@ -25,8 +25,8 @@ function isUserValid(user, password) {
     return user.USR_passwords === password;
 }
 
-const getGoogleUserByUsername = (id, name, googleUsername) => {
-    let user = userModel.findOrAddGoogleUser(id, name, googleUsername);
+const getGoogleUserById = (id, displayName, name) => {
+    let user = userModel.findOrAddGoogleUser(id, displayName, name);
     if (user) {
         return user;
     } else {
@@ -37,5 +37,5 @@ const getGoogleUserByUsername = (id, name, googleUsername) => {
 module.exports = {
     getUserByUsernameAndPassword,
     getUserById,
-    getGoogleUserByUsername
+    getGoogleUserById
 };
