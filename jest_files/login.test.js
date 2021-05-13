@@ -32,12 +32,3 @@ test('Retrieves username based on id (Fail on purpose)', () => {
     expect(find_user_by_id(100)).toBeNull();
 });
 
-
-const find_by_gmail = require('../sqlite_users').find_user_by_gmail;
-test('Retrieves name based on gmail email', () => {
-    expect(find_by_gmail('alexhong@gmail.com')).toBe('Alex Hong');
-});
-
-test('Retrieves name based on gmail email (Fail on purpose.)', () => {
-    expect(find_by_gmail('alexhong@hmil.com')).toBeNull();
-});

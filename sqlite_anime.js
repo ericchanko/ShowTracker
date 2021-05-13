@@ -7,6 +7,18 @@ let list_anime = () => {
     return statement;
 }
 
+/*//this is original code / raw code that hasn't been tdd
+let add_anime =(anime_title,anime_desc,anime_pic) => {
+    let insert = db.prepare(`INSERT INTO animes (ANI_ID,ANI_title,ANI_desc,ANI_pic) VALUES (NULL,?,?,?)`);
+    insert.run(anime_title,anime_desc,anime_pic)
+}
+
+
+let remove_anime =(anime_id) => {
+    let statement= db.prepare('DELETE FROM animes WHERE ANI_ID = ? ');
+    return statement.run(anime_id)
+}*/
+
 
 let add_anime = (anime_title, anime_desc, anime_pic) => {
     try {
@@ -25,7 +37,7 @@ let remove_anime = (anime_id) => {
     } else {
         return null;
     }
-}
+}                            
 
 // console.log(list_anime());
 // add_anime('Naruto', 'A ninja', 'https://google.com/');

@@ -20,3 +20,4 @@ test('removes anime. pass case.', () => {
 test('removes anime. fail case.', () => {
     expect(remove_anime(51)).toBeNull();
 });
+
