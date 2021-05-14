@@ -9,11 +9,11 @@ const getUserByUsernameAndPassword = (username, password) => {
             return user;
         }
     }
-    console.log("somethign went wrong");
     return null;
 };
 const getUserById = (id) => {
-    let user = userModel.findById(id);
+    let username = userModel.findById(id);
+    let user = userModel.get_user(username);
     if (user) {
         return user;
     }
