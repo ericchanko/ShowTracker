@@ -13,7 +13,7 @@ const userModel = {
         }
     },
 
-    add_user:  (user_id, user_name, user_username, user_password) => {
+    add_user: (user_id, user_name, user_username, user_password) => {
         const db = require('better-sqlite3')('./database/anime_watchlist.db');
         let insert = db.prepare(`INSERT INTO users (USR_ID, USR_name, USR_username, USR_passwords) VALUES(?, ?, ?, ?)`);
         insert.run(user_id, user_name, user_username, user_password);
@@ -49,6 +49,8 @@ const userModel = {
         return statement
     },
 };
+
+console.log(userModel.list_users());
 
 module.exports = {
     userModel

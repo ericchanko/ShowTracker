@@ -7,7 +7,6 @@ let list_anime = () => {
     return statement;
 }
 
-
 let add_anime = (anime_title, anime_desc, anime_pic) => {
     try {
         let insert = db.prepare(`INSERT INTO anime (ANI_ID, ANI_title, ANI_desc, ANI_pic) VALUES(NULL, ?, ?, ?)`);
