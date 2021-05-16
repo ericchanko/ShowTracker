@@ -25,12 +25,22 @@ let remove_anime = (anime_id) => {
         return null;
     }
 }
+let fetch_user_animes = (USR_ID) => {
+    try {
+        let statement = db.prepare(`Select Anime_List.USR_ID,anime.ANI_ID,anime.ANI_title,anime.ANI_desc,anime.ANI_pic from anime inner join Anime_List on Anime_List.ANI_ID = anime.ANI_ID where Anime_List.USR_ID = ${USR_ID} `).all();
+        return statement;
+    } catch (ReferenceError) { return null; }
 
-// console.log(list_anime());
-// add_anime('Naruto', 'A ninja', 'https://google.com/');
+}
+
+
+console.log(fetch_user_animes('abc'))
+//console.log(list_anime());
+//add_anime('Naruto', 'A ninja', 'https://google.com/');
 
 module.exports = {
     list_anime,
     add_anime,
-    remove_anime
+    remove_anime,
+    fetch_user_animes
 }
