@@ -375,6 +375,41 @@ span {
     color: black;
 }
 
+/* Individual Anime page CSS*/
+
+
+#indiv_anime_container
+{
+    
+    background-image: url("https://upload.wikimedia.org/wikipedia/en/8/88/So_I%27m_a_Spider%2C_So_What%3F%2C_volume_1.jpg");
+    background-repeat: no-repeat;
+    background-size: 900px 300px;
+}
+
+#indiv_anime_body{
+    background: none;
+}
+
+#Anime_Picture > img
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* CSS animation keyframes */
 @keyframes mainBlock {
