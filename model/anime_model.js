@@ -1,11 +1,11 @@
-const { add_user } = require('./sqlite_users');
+const { add_user } = require('./user_model');
 
 const db = require('better-sqlite3')('./database/anime_watchlist.db');
 
 let list_anime = () => {
     let statement = db.prepare('SELECT * FROM anime').all();
     return statement;
-}
+};
 
 let add_anime = (anime_title, anime_desc, anime_pic) => {
     try {

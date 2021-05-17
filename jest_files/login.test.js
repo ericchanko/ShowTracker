@@ -22,7 +22,7 @@
 //Test Driven Development//
 
 //Users//
-const findById = require('../sqlite_users').userModel.findById;
+const findById = require('../model/user_model').userModel.findById;
 
 test('Retrives username based on id.', () => {
     expect(findById(1)).toBe('aamog');
