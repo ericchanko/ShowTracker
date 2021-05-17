@@ -379,25 +379,86 @@ span {
 
 
 #indiv_anime_container
-{
+{   
+    display: flex;
     
-    background-image: url("https://upload.wikimedia.org/wikipedia/en/8/88/So_I%27m_a_Spider%2C_So_What%3F%2C_volume_1.jpg");
     background-repeat: no-repeat;
-    background-size: 900px 300px;
-}
+    background-size: 1000px 1000px;
+    color : black;
+    width:80vw;
+    height: 80vh;
 
+}
+#indiv_anime_container > div
+{
+    grid-row:1;
+    padding: 20px;
+
+}
+#anime_background{
+    background-image: url("https://images3.alphacoders.com/859/thumb-1920-859804.png");
+    
+}
 #indiv_anime_body{
     background: none;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 0.5fr 1fr;
 }
-
+#Anime_Title{
+    font-weight: bold;
+    font-size: larger;
+    position:relative;
+    top:-40px;
+}
 #Anime_Picture > img
-{
-
+{   
+    border-style: outset;
+    height: 300px;
+    width: 300px;
+    position:relative;
+    top:-40px;
 }
 
-
-
-
+#btnAdd_to_list {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    width: 200px;
+    height:50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  #btnAdd_to_list span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.1s;
+  }
+  
+  #btnAdd_to_list span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #btnAdd_to_list:hover span {
+    padding-right: 25px;
+  }
+  
+  #btnAdd_to_list:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 
 
