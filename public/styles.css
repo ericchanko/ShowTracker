@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
-body {
+.homepage {
     background-image: url("https://wallpaperaccess.com/full/2873577.png");
     width: 100vw;
     height: auto;
@@ -303,75 +304,6 @@ span {
 }
 
 /* ================ Anime List Page CSS -  ===========*/
-nav .list_view {
-    background-color: #03045e;
-    margin-bottom: 1em;
-}
-
-.anime {
-    /*background-image: url("https://wallpaperaccess.com/full/918659.jpg");*/
-    display: flex;
-    justify-content: center;
-
-}
-
-.card_list {
-    width: 80vw;
-    display: grid;
-    margin-top: 2em;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 250px;
-    grid-gap: 30px;
-}
-
-.card {
-    display: flex;
-    width:420px;
-    height: 250px;
-    background-color: #f8edeb;
-    border-radius: 2px;
-}
-
-.card_desc {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-}
-
-.card-title {
-    font-size: 20px;
-}
-
-.card img {
-    width: 185px;
-    height: 250px;
-    margin-right: 0.5em;
-    object-fit: cover;
-}
-
-.anime_desc {
-    font-size: 10px;
-}
-
-.desc_footer {
-    font-size: 8px;
-    display: flex;
-}
-
-.tag {
-    background-color: #1473e6;
-    height: 20px;
-    width: auto;
-    margin: 0.5em;
-    border-radius: 2px;
-}
-
-
-
-
-
-
 
 
 
@@ -538,4 +470,151 @@ nav .list_view {
     100% {
         font-size: 1.2em;
     }
+}
+
+/* list index view*/
+.anime-list {
+    width: 100vw;
+    height: auto;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    width: 90vw;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seachbar {
+    display: flex;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    background-image: url("https://m.media-amazon.com/images/I/4141ztFVb3L._SS500_.jpg");
+    background-size: contain;
+    border-radius: 20px;
+}
+
+.account-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-btn {
+    width: 22px;
+    height: 22px;
+    background-image: url("https://image.flaticon.com/icons/png/512/54/54443.png");
+    background-size: contain;
+}
+
+.seachbar input {
+    height: 2em;
+    width: 18em;
+    border-radius: 5px;
+    border: none;
+}
+
+.searchbar *, .navbar * {
+    margin: 0.8em;
+    align-self: center;
+    text-decoration: none;
+}
+
+.animes {
+    margin-top:5em;
+    width: 80vw;
+    height: 80vh;
+    background-color: #FFF;
+    border-radius: 15px;
+    overflow: scroll;
+}
+
+.anime-header {
+    display: flex;
+    margin: 1em;
+    justify-content: space-between;
+}
+
+.anime-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 1em;
+}
+
+.anime-overview * {
+    margin: 0;
+}
+
+.list-view {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.anime-desc-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em;
+    height: 30px;
+    align-items: center;
+}
+
+.anime-desc-header a {
+    width: 15px;
+    height: 15px;
+    background-image: url("https://cdn3.iconfinder.com/data/icons/user-interface-1-10/24/icon-ui-1-options-512.png");
+    background-size: contain;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.anime-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.anime-card {
+    width: 400px;
+    height: 200px;
+    margin: 1em;
+    background-color: red;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    overflow: hidden;
+}
+
+.anime-card img {
+    height: 180px;
+    width: 140px;
+    margin: 0.5em;
+}
+
+.anime-desc {
+    margin: 0.2em;
+}
+
+.tags {
+    display: flex;
+}
+
+.tag {
+    width: auto;
+    margin: 0.2em;
+    height: 25px;
+    background-color: darkgrey;
+    border-radius: 5px;
 }

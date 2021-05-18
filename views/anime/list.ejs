@@ -2,30 +2,54 @@
     <title>AWA List</title>
 </head>
 
-<body>
-<!--    <nav>-->
-<!--        <div class="menu-container list_view">-->
-
-<!--            <a href="/" class="menu-item">Home</a>-->
-<!--            <a href="/" class="menu-item">About</a>-->
-<!--            <a href="/list" class="menu-item">Your List</a>-->
-<!--            &lt;!&ndash;        change to be dyanmic and say the users name instead of saying login&ndash;&gt;-->
-<!--        </div>-->
-<!--    </nav>-->
-    <div class="anime">
-        <div class="card_list">
-            <% for (let anime of userAnimes) { %>
-            <div class="card">
-                <img src=<%= anime.ANI_pic%> >
-                <div class="card_desc">
-                    <div class="card-title"><%= anime.ANI_title %> </div>
-                    <div class="anime_desc"><%= anime.ANI_desc %></div>
-                    <div class="desc_footer">
-                        <div class="tag">Romance</div>
-                        <div class="tag">Action</div>
+<body class="anime-list">
+ <nav class="navbar">
+     <div class="seachbar">
+         <a href="#" class="icon" title="Homepage"></a>
+         <p>AWA</p>
+         <input type="search" placeholder="🔎">
+     </div>
+     <div class="account-bar">
+         <a href="#" class="add-btn" title="Add anime"></a>
+         <a href="#" class="acct" title="Account Settings">Account</a>
+     </div>
+ </nav>
+<section class="animes">
+    <div class="anime-header">
+        <h2>Animes</h2>
+        <h2>May 17, 2021</h2>
+    </div>
+    <div class="anime-overview">
+        <h1>0</h1>
+        <h1>0</h1>
+        <h1>0</h1>
+        <p></p>
+        <p>In Progress</p>
+        <p>Upcoming</p>
+        <p>Total Projects</p>
+    </div>
+        <div class="anime-cards">
+            <div class="list-view">
+                <% for (let anime of userAnimes) { %>
+                <div class="anime-card">
+                    <img src=<%= anime.ANI_pic %> >
+                    <div class="anime-desc">
+                        <div class="anime-desc-header">
+<!--                            make date dynamic as well -->
+                            <p class="date">May 17, 2021</p>
+                            <a href="#"></a>
+                        </div>
+                        <h3 class="anime-title"><%= anime.ANI_title %></h3>
+                        <p><%= anime.ANI_desc %></p>
+                        <div class="tags">
+                            <div class="tag">TROLL</div>
+                            <div class="tag">Adventure</div>
+                        </div>
                     </div>
                 </div>
+                <% } %>
             </div>
-            <% } %>
         </div>
-    </div>
+</section>
+</body>
+
