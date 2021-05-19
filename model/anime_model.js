@@ -43,11 +43,12 @@ let get_anime_by_title = (anime_title) => {
     return statement;
 };
 
-let add_to_userlist = (animeID, userID, date) => {
-    // insert into database this info
-    // (animeID, userID, 0, 0, date_added)
+let fetch_animes = (USR_ID) => {
+    try {
+        let statement = db.prepare(`Select Anime_List.USR_ID,anime.ANI_ID,anime.ANI_title,anime.ANI_desc,anime.ANI_pic from anime inner join Anime_List on Anime_List.ANI_ID = anime.ANI_ID where Anime_List.USR_ID = ${USR_ID} `).all();
+        return statement;
+    } catch (ReferenceError) { return null; }
 };
-
 
 module.exports = {
     list_anime,
