@@ -42,6 +42,17 @@ let fetch_user_anime_list = (USR_ID) => {
     catch (ReferenceError){return null;}
 }
 
+
+let add_to_userlist = (animeID, userID, date) => {
+    try {
+        let insert = db.prepare(`Insert into Anime_List (USR_ID,ANI_ID,date_Added,watch_status,watched_Episodes) VALUES (?,?,?,?,?)`);
+        insert.run(userID, animeID, date,0,0);
+        return "Added anime to user's watchlist";
+        
+    }catch (SqliteError){return null;}
+};
+
+console.log(add_to_userlist(30, 1,'04.May.2021'))
 //console.log(fetch_user_anime_list(1))
 //console.log(fetch_animes(1))
 //console.log(list_anime());
@@ -52,5 +63,6 @@ module.exports = {
     add_anime,
     remove_anime,
     fetch_animes,
-    fetch_user_anime_list
+    fetch_user_anime_list,
+    add_to_userlist
 }
