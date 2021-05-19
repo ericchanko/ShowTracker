@@ -8,9 +8,14 @@ let list_anime = () => {
 };
 
 let add_anime = (anime_title, anime_desc, anime_pic) => {
+    let get_anime_by_title = (anime_title) => {
+        let statement = db.prepare(`SELECT ANI_ID FROM ANIME WHERE ANI_title = ?`).get(anime_title);
+        return statement;
+    }
     try {
         let insert = db.prepare(`INSERT INTO anime (ANI_ID, ANI_title, ANI_desc, ANI_pic) VALUES(NULL, ?, ?, ?)`);
         insert.run(anime_title, anime_desc, anime_pic);
+        console.log(get_anime_by_title(anime_title));
         return 'Anime added successfully';
     } catch (SqliteError) {
         return null;
@@ -34,9 +39,10 @@ let fetch_user_animes = (USR_ID) => {
 };
 
 
-console.log(fetch_user_animes('abc'));
+// console.log(fetch_user_animes('abc'));
 //console.log(list_anime());
-//add_anime('Naruto', 'A ninja', 'https://google.com/');
+console.log(add_anime('Faruto', 'A ninja', 'https://google.com/'));
+// console.log(get_anime_by_title('Yahari Ore no Seishun Love Comedy wa Machigatteiru'));
 
 module.exports = {
     list_anime,
