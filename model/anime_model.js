@@ -11,6 +11,8 @@ let add_anime = (anime_title, anime_desc, anime_pic) => {
     try {
         let insert = db.prepare(`INSERT INTO anime (ANI_ID, ANI_title, ANI_desc, ANI_pic) VALUES(NULL, ?, ?, ?)`);
         insert.run(anime_title, anime_desc, anime_pic);
+
+        // implement a check for duplicate title function!
         return 'Anime added successfully';
     } catch (SqliteError) {
         return null;
@@ -25,6 +27,9 @@ let remove_anime = (anime_id) => {
         return null;
     }
 };
+
+
+
 let fetch_user_animes = (USR_ID) => {
     try {
         let statement = db.prepare(`Select Anime_List.USR_ID,anime.ANI_ID,anime.ANI_title,anime.ANI_desc,anime.ANI_pic from anime inner join Anime_List on Anime_List.ANI_ID = anime.ANI_ID where Anime_List.USR_ID = ${USR_ID} `).all();

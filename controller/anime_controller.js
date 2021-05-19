@@ -11,6 +11,20 @@ let animeController = {
 
     listing: (req, res) => {
         res.render("anime/listing")
+    },
+
+    add: (req, res) => {
+        res.render("anime/new")
+    },
+
+    addSubmit: (req, res) => {
+        let title = req.body.title;
+        let desc = req.body.description;
+        let img = req.body.image;
+
+        console.log(req.user.USR_ID)
+
+
     }
 };
 

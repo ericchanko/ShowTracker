@@ -1,0 +1,33 @@
+<head>
+    <title>AWA Add Anime</title>
+</head>
+<body class="add-ani">
+    <nav>
+        <div class="menu-container">
+
+            <a href="/" class="menu-item">Home</a>
+            <a href="/list" class="menu-item">Your Animes</a>
+        </div>
+    </nav>
+    <header>
+        <h1>Add anime into your list</h1>
+    </header>
+
+    <div class="add-anime-form">
+        <form action="/list" method="post">
+            <div class="title-submission">
+                <label for="title"></label>
+                <input type="text" id="title" name="title" placeholder="Title">
+            </div>
+            <div class="desc-submission">
+                <label for="description"></label>
+                <input type="text" id="description" name="description" placeholder="description">
+            </div>
+            <div class="img-submission">
+                <label for="image"></label>
+                <input type="text" id="image" name="image" placeholder="image url">
+            </div>
+            <button type="submit" class="create-anime">Submit</button>
+        </form>
+    </div>
+</body>
