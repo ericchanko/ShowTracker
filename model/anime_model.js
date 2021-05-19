@@ -43,4 +43,4 @@ module.exports = {
     add_anime,
     remove_anime,
     fetch_user_animes
-}
+};
