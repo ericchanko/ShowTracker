@@ -7,9 +7,11 @@ let animeController = {
 
     home: (req, res) => {
         res.render("anime/index")
+    },
+
+    listing: (req, res) => {
+        res.render("anime/listing")
     }
-
-
 };
 
 module.exports = animeController;
