@@ -11,12 +11,16 @@ let add_anime = (anime_title, anime_desc, anime_pic) => {
     try {
         let insert = db.prepare(`INSERT INTO anime (ANI_ID, ANI_title, ANI_desc, ANI_pic) VALUES(NULL, ?, ?, ?)`);
         insert.run(anime_title, anime_desc, anime_pic);
-
-        // implement a check for duplicate title function!
-        return 'Anime added successfully';
+        console.log('Anime added successfully');
+        return get_anime_by_title(anime_title);
     } catch (SqliteError) {
         return null;
     }
+};
+
+let retrieve_anime_by_name = (anime_title) => {
+    let statement = db.prepare('SELECT * FROM anime where ANI_title = ?').get(anime_title);
+    return statement;
 };
 
 let remove_anime = (anime_id) => {
@@ -27,25 +31,28 @@ let remove_anime = (anime_id) => {
         return null;
     }
 };
-
-
-
 let fetch_user_animes = (USR_ID) => {
     try {
         let statement = db.prepare(`Select Anime_List.USR_ID,anime.ANI_ID,anime.ANI_title,anime.ANI_desc,anime.ANI_pic from anime inner join Anime_List on Anime_List.ANI_ID = anime.ANI_ID where Anime_List.USR_ID = ${USR_ID} `).all();
         return statement;
     } catch (ReferenceError) { return null; }
-
 };
 
+let get_anime_by_title = (anime_title) => {
+    let statement = db.prepare(`SELECT ANI_ID FROM ANIME WHERE ANI_title = ?`).get(anime_title);
+    return statement;
+};
 
-console.log(fetch_user_animes('abc'));
-//console.log(list_anime());
-//add_anime('Naruto', 'A ninja', 'https://google.com/');
+let add_to_userlist = (animeID, userID, date) => {
+    // insert into database this info
+    // (animeID, userID, 0, 0, date_added)
+};
+
 
 module.exports = {
     list_anime,
     add_anime,
     remove_anime,
-    fetch_user_animes
+    fetch_user_animes,
+    retrieve_anime_by_name
 };
