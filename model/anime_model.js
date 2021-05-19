@@ -54,5 +54,6 @@ module.exports = {
     list_anime,
     add_anime,
     remove_anime,
-    fetch_user_animes
+    fetch_user_animes,
+    retrieve_anime_by_name
 };
