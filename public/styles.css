@@ -303,6 +303,10 @@ span {
     align-items: center;
 }
 
+#name label {
+    margin-bottom: 1em;
+}
+
 /* ================ Anime List Page CSS -  ===========*/
 
 
