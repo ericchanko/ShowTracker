@@ -43,6 +43,10 @@ let fetch_user_animes = (USR_ID) => {
 
 };
 
+let add_to_userlist = (animeID, userID, date) => {
+    let insert = db.prepare('INSERT INTO Anime_List (USR_ID, ANI_ID) VALUES(?, ?)');
+    insert.run(userID, animeID);
+};
 
 // console.log(fetch_user_animes('abc'));
 //console.log(list_anime());
@@ -50,10 +54,12 @@ let fetch_user_animes = (USR_ID) => {
 // console.log(get_anime_by_title('Yahari Ore no Seishun Love Comedy wa Machigatteiru'));
 // console.log(retrieve_anime_by_name('Plunderer'));
 
+
 module.exports = {
     list_anime,
     add_anime,
     remove_anime,
     fetch_user_animes,
-    retrieve_anime_by_name
+    retrieve_anime_by_name,
+    add_to_userlist
 };
