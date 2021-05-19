@@ -25,17 +25,26 @@ let animeController = {
         let desc = req.body.description;
         let img = req.body.image;
 
-        // let aniID = animeModel.add_anime(title, desc, img);
         let now = new Date();
         let yyyy = now.getFullYear();
         let mm = now.getMonth();
         let dd = now.getDate();
-
         if (dd < 10){ dd='0'+dd }
-
         let today = months[mm]+" "+dd+", "+yyyy;
-        // console.log(aniID);
-        console.log(today);
+
+        // check if anime exists first
+        let aniID = animeModel.retrieve_anime_by_name(title).ANI_ID;
+        if (aniID) {
+            console.log("anime already exists", aniID);
+            animeModel.add_to_userlist(aniID, req.user.USR_ID, today);
+        }
+        else {
+            let aniID = animeModel.add_anime(title, desc, img);
+            console.log("This is new anime ID", aniID);
+            animeModel.add_to_userlist(aniID, req.user.USR_ID,  today);
+        }
+        console.log(animeModel.fetch_user_animes(req.user.USR_ID));
+        res.render("anime/list", {userAnimes: animeModel.fetch_user_animes(req.user.USR_ID)});
     }
 };
 
