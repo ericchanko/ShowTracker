@@ -1,6 +1,6 @@
 //Anime//
-const add_anime = require('../sqlite_anime').add_anime;
-const remove_anime = require('../sqlite_anime').remove_anime;
+const add_anime = require('../model/anime_model').add_anime;
+const remove_anime = require('../model/anime_model').remove_anime;
 
 
 test('Adds anime, fail case', () => {

@@ -2,44 +2,54 @@
     <title>AWA List</title>
 </head>
 
-<body>
-    <nav>
-        <div class="menu-container">
-
-            <a href="/" class="menu-item">Home</a>
-            <a href="/" class="menu-item">About</a>
-            <a href="/list" class="menu-item">Your List</a>
-            <!--        change to be dyanmic and say the users name instead of saying login-->
-        </div>
-    </nav>
-    <div class="anime">
-        <div class="anime-canvas">
-            <header class="welcome">
-<!--                 change it so that all animes display number of animes in users list-->
-                <h1>All Animes (0) </h1>
-                <div class="utility">
-                    <input type="text" placeholder="🔍 Search for anime">
-                    <button id="+Add Anime">Add New Anime</button>
-                </div>
-            </header>
-            <div class="border">
-                <div class="anime-nav">
-                    <span class="anime-title">Anime</span>
-                    <span class="tags">Tags</span>
-                    <span class="status">Status</span>
-                </div>
-            </div>
-<!--            <div class="anime-cards">-->
-<!--                <div class="anime-card">-->
-<!--                    <div class="anime-title">-->
-<!--                        <img src="https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png" alt="Your name">-->
-<!--                        <p>Your name</p>-->
-<!--                    </div>-->
-<!--                    <div class="tags">-->
-<!--                        <span>Romance</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-        </div>
+<body class="anime-list">
+ <nav class="navbar">
+     <div class="seachbar">
+         <a href="/" class="icon" title="Homepage"></a>
+         <p>AWA</p>
+         <input type="search" placeholder="🔎">
+     </div>
+     <div class="account-bar">
+         <a href="#" class="add-btn" title="Add anime"></a>
+         <a href="#" class="acct" title="Account Settings">Account</a>
+     </div>
+ </nav>
+<section class="animes">
+    <div class="anime-header">
+        <h2>Animes</h2>
+        <h2>May 17, 2021</h2>
     </div>
+    <div class="anime-overview">
+        <h1>0</h1>
+        <h1>0</h1>
+        <h1><%= userAnimes.length %></h1>
+        <p></p>
+        <p>In Progress</p>
+        <p>Completed</p>
+        <p>Total Projects</p>
+    </div>
+        <div class="anime-cards">
+            <div class="list-view">
+                <% for (let anime of userAnimes) { %>
+                <div class="anime-card">
+                    <img src=<%= anime.ANI_pic %> >
+                    <div class="anime-desc">
+                        <div class="anime-desc-header">
+<!--                            make date dynamic as well -->
+                            <p class="date">May 17, 2021</p>
+                            <a href="#"></a>
+                        </div>
+                        <h3 class="anime-title"><%= anime.ANI_title %></h3>
+                        <p><%= anime.ANI_desc %></p>
+                        <div class="tags">
+                            <div class="tag">TROLL</div>
+                            <div class="tag">Adventure</div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+</section>
 </body>
+

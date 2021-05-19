@@ -1,4 +1,4 @@
-const userModel = require("../sqlite_users").userModel;
+const userModel = require("../model/user_model").userModel;
 
 
 const getUserByUsernameAndPassword = (username, password) => {
