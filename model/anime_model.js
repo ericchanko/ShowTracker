@@ -22,6 +22,11 @@ let add_anime = (anime_title, anime_desc, anime_pic) => {
     }
 };
 
+let retrieve_anime_by_name = (anime_title) => {
+    let statement = db.prepare('SELECT * FROM anime where ANI_title = ?').get(anime_title);
+    return statement;
+}
+
 let remove_anime = (anime_id) => {
     let statement = db.prepare(`DELETE FROM anime WHERE ANI_ID = ? `);
     if (statement.run(anime_id).changes == 1) {
@@ -41,8 +46,9 @@ let fetch_user_animes = (USR_ID) => {
 
 // console.log(fetch_user_animes('abc'));
 //console.log(list_anime());
-console.log(add_anime('Faruto', 'A ninja', 'https://google.com/'));
+// console.log(add_anime('Faruto', 'A ninja', 'https://google.com/'));
 // console.log(get_anime_by_title('Yahari Ore no Seishun Love Comedy wa Machigatteiru'));
+// console.log(retrieve_anime_by_name('Plunderer'));
 
 module.exports = {
     list_anime,
