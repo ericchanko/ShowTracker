@@ -30,7 +30,7 @@ let authController = {
         // ie we pray user doesnt get same userID as another
         let userID = Math.floor(Math.random() * 100000000001);
         userModel.add_user(userID, req.body.name, req.body.username, req.body.password);
-        console.log("accoutn succesfully made");
+        console.log("account successfully made");
         res.render("auth/login");
     },
 };
