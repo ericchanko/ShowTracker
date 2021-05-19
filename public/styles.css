@@ -607,14 +607,3 @@ span {
     margin: 0.2em;
 }
 
-.tags {
-    display: flex;
-}
-
-.tag {
-    width: auto;
-    margin: 0.2em;
-    height: 25px;
-    background-color: darkgrey;
-    border-radius: 5px;
-}
