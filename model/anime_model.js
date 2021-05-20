@@ -29,12 +29,18 @@ let fetch_user_animes = (USR_ID) => {
     try {
         let statement = db.prepare(`Select Anime_List.USR_ID,anime.ANI_ID,anime.ANI_title,anime.ANI_desc,anime.ANI_pic from anime inner join Anime_List on Anime_List.ANI_ID = anime.ANI_ID where Anime_List.USR_ID = ${USR_ID} `).all();
         return statement;
-    } catch (ReferenceError) { return null; }
+    } catch (ReferenceError) { return null; };
+}
 
+let find_anime = (anime_id) => {
+    try {
+        let statement = db.prepare(`Select * from anime where ANI_ID = ${anime_id}`).get();
+        statement.anime_background_url = `"background-image: url(${statement.anime_background_url});"`;
+        return statement;
+    } catch (ReferenceError) { return null; }
 };
 
-
-console.log(fetch_user_animes('abc'));
+//console.log(find_anime(1));
 //console.log(list_anime());
 //add_anime('Naruto', 'A ninja', 'https://google.com/');
 
@@ -42,5 +48,6 @@ module.exports = {
     list_anime,
     add_anime,
     remove_anime,
-    fetch_user_animes
+    fetch_user_animes,
+    find_anime
 };

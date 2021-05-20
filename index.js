@@ -40,7 +40,7 @@ app.get("/about",  (req, res) => {
     res.send("This page is currently under construction!")
 });
 
-app.get("/listing", animeController.listing);
+app.get("/listing/:id", ensureAuthenticated, animeController.listing);
 
 app.get("/login", forwardAuthenticated, authController.login);
 app.post("/login", authController.loginSubmit);

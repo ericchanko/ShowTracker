@@ -10,7 +10,8 @@ let animeController = {
     },
 
     listing: (req, res) => {
-        res.render("anime/listing")
+        let animeID = req.params.id;
+        res.render("anime/listing", {anime: animeModel.find_anime(Number(animeID))})
     }
 };
 
