@@ -18,11 +18,6 @@ let add_anime = (anime_title, anime_desc, anime_pic) => {
     }
 };
 
-let retrieve_anime_by_name = (anime_title) => {
-    let statement = db.prepare('SELECT * FROM anime where ANI_title = ?').get(anime_title);
-    return statement;
-};
-
 let remove_anime = (anime_id) => {
     let statement = db.prepare(`DELETE FROM anime WHERE ANI_ID = ? `);
     if (statement.run(anime_id).changes == 1) {
@@ -31,6 +26,12 @@ let remove_anime = (anime_id) => {
         return null;
     }
 };
+
+let retrieve_anime_by_name = (anime_title) => {
+    let statement = db.prepare('SELECT * FROM anime where ANI_title = ?').get(anime_title);
+    return statement;
+};
+
 let fetch_user_animes = (USR_ID) => {
     try {
         let statement = db.prepare(`Select Anime_List.USR_ID,anime.ANI_ID,anime.ANI_title,anime.ANI_desc,anime.ANI_pic from anime inner join Anime_List on Anime_List.ANI_ID = anime.ANI_ID where Anime_List.USR_ID = ${USR_ID} `).all();

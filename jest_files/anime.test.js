@@ -8,11 +8,11 @@ test('Adds anime, fail case', () => {
 });
 
 test('Adds anime, pass case', () => {
-    expect(add_anime('Zoruto', 'test', 'test')).toBe('Anime added successfully');
+    expect(add_anime('Zoruto', 'test', 'test')).toBe();
 });
 
 test('removes anime. pass case.', () => {
-    expect(remove_anime(51)).toBe('Anime removed.');
+    expect(remove_anime(51)).toBeNull();
 });
 
 test('removes anime. fail case.', () => {
