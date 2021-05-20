@@ -48,6 +48,8 @@ app.post("/login", authController.loginSubmit);
 app.get("/register", forwardAuthenticated, authController.register);
 app.post("/register", authController.registerSubmit);
 
+app.get("/logout", authController.logout);
+
 app.get("/add", ensureAuthenticated, animeController.add);
 app.post("/list", ensureAuthenticated, animeController.addSubmit);
 

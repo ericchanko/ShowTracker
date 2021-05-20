@@ -43,7 +43,7 @@ let fetch_animes = (ANI_ID) => {
         return statement;
     } catch (ReferenceError) { return null; }
 
-}
+};
 
 let fetch_user_anime_list = (USR_ID) => {
     try {
@@ -51,7 +51,7 @@ let fetch_user_anime_list = (USR_ID) => {
         return statement;
     }
     catch (ReferenceError){return null;}
-}
+};
 
 
 //console.log(fetch_animes(1)[0].anime_background_url);
