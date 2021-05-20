@@ -1,3 +1,5 @@
+
+
 const animeModel = require("../model/anime_model");
 
 let animeController = {
@@ -10,8 +12,9 @@ let animeController = {
     },
 
     listing: (req, res) => {
-        //let url=animeModel.
-        res.render("anime/listing")
+        //let animeobject=animeModel.fetch_animes(1);
+        //console.log(animeobject);
+        res.render("anime/listing");
     }
 };
 
