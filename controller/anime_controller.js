@@ -10,6 +10,7 @@ let animeController = {
     },
 
     listing: (req, res) => {
+        //let url=animeModel.
         res.render("anime/listing")
     }
 };
