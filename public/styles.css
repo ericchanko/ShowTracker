@@ -303,6 +303,10 @@ span {
     align-items: center;
 }
 
+#name label {
+    margin-bottom: 1em;
+}
+
 /* ================ Anime List Page CSS -  ===========*/
 
 
@@ -671,4 +675,54 @@ span {
 .anime-desc {
     margin: 0.2em;
 }
+
+/* ================ Add Anime Page ================ */
+.add-ani {
+    background-image: url("https://img4.goodfon.com/wallpaper/nbig/1/e2/rogue-cheney-minimalistic-by-greenmapple17-fairy-tail-anime.jpg");
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.add-ani header {
+    width: 100vw;
+    height: 100px;
+    text-align: center;
+    margin-top: 6em;
+    color: #FFFFFF;
+}
+
+.add-anime-form {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 70vh;
+}
+
+.title-submission input, .desc-submission input, .img-submission input  {
+    width: 60vw;
+    height: 20px;
+    margin-top: 1em;
+    border: none;
+    border-radius: 5px;
+}
+
+.desc-submission input {
+    height: 20em;
+}
+
+.img-submission {
+    margin-bottom: 1em;
+}
+
+.create-anime {
+    border: none;
+    width: 60px;
+    height: 30px;
+    color: #FFFFFF;
+    border-radius: 2px;
+    background-color: lightsalmon;
+}
+
 

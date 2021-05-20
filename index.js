@@ -48,6 +48,8 @@ app.post("/login", authController.loginSubmit);
 app.get("/register", forwardAuthenticated, authController.register);
 app.post("/register", authController.registerSubmit);
 
+app.get("/add", ensureAuthenticated, animeController.add);
+app.post("/list", ensureAuthenticated, animeController.addSubmit);
 
 app.get('/auth/google', forwardAuthenticated, passport.authenticate('google', { scope: ['profile'] }));
 app.get('/auth/google/callback', forwardAuthenticated,

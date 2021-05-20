@@ -11,10 +11,16 @@ let add_anime = (anime_title, anime_desc, anime_pic) => {
     try {
         let insert = db.prepare(`INSERT INTO anime (ANI_ID, ANI_title, ANI_desc, ANI_pic) VALUES(NULL, ?, ?, ?)`);
         insert.run(anime_title, anime_desc, anime_pic);
-        return 'Anime added successfully';
+        console.log('Anime added successfully to list');
+        return get_anime_by_title(anime_title);
     } catch (SqliteError) {
         return null;
     }
+};
+
+let retrieve_anime_by_name = (anime_title) => {
+    let statement = db.prepare('SELECT * FROM anime where ANI_title = ?').get(anime_title);
+    return statement;
 };
 
 let remove_anime = (anime_id) => {
@@ -30,7 +36,6 @@ let fetch_user_animes = (USR_ID) => {
         let statement = db.prepare(`Select Anime_List.USR_ID,anime.ANI_ID,anime.ANI_title,anime.ANI_desc,anime.ANI_pic from anime inner join Anime_List on Anime_List.ANI_ID = anime.ANI_ID where Anime_List.USR_ID = ${USR_ID} `).all();
         return statement;
     } catch (ReferenceError) { return null; }
-
 };
 let fetch_animes = (ANI_ID) => {
     try {
@@ -49,18 +54,24 @@ let fetch_user_anime_list = (USR_ID) => {
 }
 
 
-let add_to_userlist = (animeID, userID, date) => {
-    try {
-        let insert = db.prepare(`Insert into Anime_List (USR_ID,ANI_ID,date_Added,watch_status,watched_Episodes) VALUES (?,?,?,?,?)`);
-        insert.run(userID, animeID, date,0,0);
-        return "Added anime to user's watchlist";
-        
-    }catch (SqliteError){return null;}
-};
-
 //console.log(fetch_animes(1)[0].anime_background_url);
 //console.log(list_anime());
 //add_anime('Naruto', 'A ninja', 'https://google.com/');
+let get_anime_by_title = (anime_title) => {
+    let statement = db.prepare(`SELECT ANI_ID FROM ANIME WHERE ANI_title = ?`).get(anime_title);
+    return statement;
+};
+
+let add_to_userlist = (animeID, userID, date) => {
+    try {
+        let insert = db.prepare(`Insert into Anime_List (USR_ID,ANI_ID,date_Added,watch_status,watched_Episodes) VALUES (?,?,?,?,?)`);
+        insert.run(userID, animeID, date, 0, 0);
+        return "Added anime to user's watchlist";
+    }
+    catch (SqliteError){
+        return null;
+    }
+};
 
 module.exports = {
     list_anime,
@@ -69,5 +80,6 @@ module.exports = {
     fetch_user_animes,
     fetch_animes,
     fetch_user_anime_list,
+    retrieve_anime_by_name,
     add_to_userlist
 };
