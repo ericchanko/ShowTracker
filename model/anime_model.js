@@ -43,7 +43,14 @@ let fetch_animes = (ANI_ID) => {
         let statement = db.prepare(`SELECT * FROM anime where Anime.ANI_ID = ${ANI_ID} `).all();
         return statement;
     } catch (ReferenceError) { return null; }
+}
 
+let find_anime = (anime_id) => {
+    try {
+        let statement = db.prepare(`Select * from anime where ANI_ID = ${anime_id}`).get();
+        statement.anime_background_url = `"background-image: url(${statement.anime_background_url});"`;
+        return statement;
+    } catch (ReferenceError) { return null; }
 };
 
 let fetch_user_anime_list = (USR_ID) => {
