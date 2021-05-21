@@ -50,14 +50,9 @@ let fetch_user_anime_list = (USR_ID) => {
     try {
         let statement = db.prepare(`Select anime.ANI_title,anime.ANI_pic, anime.ANI_desc,Anime_List.watch_status, Anime_List.watched_Episodes,Anime_List.date_Added from Anime_List inner join anime on Anime_List.ANI_ID = anime.ANI_ID where USR_ID = ${USR_ID}`).all();
         return statement;
-    }
-    catch (ReferenceError){return null;}
+    } catch (ReferenceError) { return null; }
 };
 
-
-//console.log(fetch_animes(1)[0].anime_background_url);
-//console.log(list_anime());
-//add_anime('Naruto', 'A ninja', 'https://google.com/');
 let get_anime_by_title = (anime_title) => {
     let statement = db.prepare(`SELECT ANI_ID FROM ANIME WHERE ANI_title = ?`).get(anime_title);
     return statement;
@@ -68,12 +63,10 @@ let add_to_userlist = (animeID, userID, date) => {
         let insert = db.prepare(`Insert into Anime_List (USR_ID,ANI_ID,date_Added,watch_status,watched_Episodes) VALUES (?,?,?,?,?)`);
         insert.run(userID, animeID, date, 0, 0);
         return "Added anime to user's watchlist";
-    }
-    catch (SqliteError){
+    } catch (SqliteError) {
         return null;
     }
 };
-
 module.exports = {
     list_anime,
     add_anime,
@@ -82,5 +75,6 @@ module.exports = {
     fetch_animes,
     fetch_user_anime_list,
     retrieve_anime_by_name,
-    add_to_userlist
+    add_to_userlist,
+    get_anime_by_title
 };
