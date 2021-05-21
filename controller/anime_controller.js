@@ -15,7 +15,8 @@ let animeController = {
     },
 
     listing: (req, res) => {
-        res.render("anime/listing")
+        let animeID = req.params.id;
+        res.render("anime/listing", {anime: animeModel.find_anime(Number(animeID))})
     },
 
     add: (req, res) => {
@@ -47,6 +48,7 @@ let animeController = {
         }
         console.log(animeModel.fetch_user_animes(req.user.USR_ID));
         res.render("anime/list", {userAnimes: animeModel.fetch_user_animes(req.user.USR_ID)});
+
     }
 };
 
