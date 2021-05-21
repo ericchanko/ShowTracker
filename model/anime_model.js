@@ -1,4 +1,3 @@
-const { constants } = require('fs');
 const { add_user } = require('./user_model');
 
 const db = require('better-sqlite3')('./database/anime_watchlist.db');
@@ -39,7 +38,6 @@ let fetch_user_animes = (USR_ID) => {
         return statement;
     } catch (ReferenceError) { return null; }
 };
-
 let fetch_animes = (ANI_ID) => {
     try {
         let statement = db.prepare(`SELECT * FROM anime where Anime.ANI_ID = ${ANI_ID} `).all();
@@ -55,10 +53,6 @@ let fetch_user_anime_list = (USR_ID) => {
     } catch (ReferenceError) { return null; }
 };
 
-
-//console.log(fetch_animes(1)[0].anime_background_url);
-//console.log(list_anime());
-//add_anime('Naruto', 'A ninja', 'https://google.com/');
 let get_anime_by_title = (anime_title) => {
     let statement = db.prepare(`SELECT ANI_ID FROM ANIME WHERE ANI_title = ?`).get(anime_title);
     return statement;
@@ -73,7 +67,6 @@ let add_to_userlist = (animeID, userID, date) => {
         return null;
     }
 };
-
 module.exports = {
     list_anime,
     add_anime,
