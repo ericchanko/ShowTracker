@@ -1,4 +1,5 @@
 const passport = require("../middleware/passport");
+const userModel = require("../model/user_model").userModel;
 
 let authController = {
     login: (req, res) => {
@@ -24,7 +25,13 @@ let authController = {
     },
 
     registerSubmit: (req, res, next) => {
-        res.send("To be implemented!")
+
+        // temporary solution to non-enforcement of unqiue user ID's
+        // ie we pray user doesnt get same userID as another
+        let userID = Math.floor(Math.random() * 100000000001);
+        userModel.add_user(userID, req.body.name, req.body.username, req.body.password);
+        console.log("account successfully made");
+        res.render("auth/login");
     },
 };
 

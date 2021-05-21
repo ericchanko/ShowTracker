@@ -40,12 +40,16 @@ app.get("/about",  (req, res) => {
     res.send("This page is currently under construction!")
 });
 
+app.get("/listing", animeController.listing);
+
 app.get("/login", forwardAuthenticated, authController.login);
 app.post("/login", authController.loginSubmit);
 
 app.get("/register", forwardAuthenticated, authController.register);
 app.post("/register", authController.registerSubmit);
 
+app.get("/add", ensureAuthenticated, animeController.add);
+app.post("/list", ensureAuthenticated, animeController.addSubmit);
 
 app.get('/auth/google', forwardAuthenticated, passport.authenticate('google', { scope: ['profile'] }));
 app.get('/auth/google/callback', forwardAuthenticated,
@@ -56,7 +60,9 @@ app.get('/auth/google/callback', forwardAuthenticated,
     });
 app.post('/auth/google', authController.googleSubmit);
 
-app.listen(3000, function() {
+let port = process.env.PORT || 3000;
+
+app.listen(port, function() {
     console.log(
         "Server running. Visit: localhost:3000"
     );

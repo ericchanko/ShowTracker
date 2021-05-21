@@ -1,6 +1,6 @@
 const { copyFileSync } = require('fs');
 
-const userModel = {
+const user_model = {
 
     findById: (user_id) => {
         const db = require('better-sqlite3')('./database/anime_watchlist.db');
@@ -50,8 +50,11 @@ const userModel = {
     },
 };
 
+<<<<<<< HEAD:sqlite_users.js
 //console.log(userModel.list_users());
+=======
+>>>>>>> main:model/user_model.js
 
 module.exports = {
-    userModel
+    userModel: user_model
 };
