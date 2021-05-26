@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .homepage, .login-page {
     background-image: url("https://wallpaperaccess.com/full/2873577.png");
@@ -309,18 +310,6 @@ span {
 
 /* ================ Anime List Page CSS -  ===========*/
 
-
-
-
-
-
-
-
-
-
-
-
-/**/
 .anime-nav, .anime-cards {
     width: 95%;
     display: flex;
@@ -341,36 +330,50 @@ span {
 #indiv_anime_container
 {
     display: flex;
-
     background-repeat: no-repeat;
     background-size: 1000px 1000px;
-    color : black;
     position:relative;
-
-
 }
 #indiv_anime_container > div
 {
     grid-row:1;
     padding: 20px;
-    
+
 }
 
 #anime_background{
     background-size: 90%;
     background-position: center;
     background-repeat: no-repeat;
-
 }
+
+.dark {
+    background-color: #1f3240;
+    color : white;
+}
+
+.light {
+    background-color: #ECCFC3;
+    color: black;
+}
+
+
+
+
 #indiv_anime_body{
+    font-family: 'Open Sans', sans-serif;
     display: grid;
     justify-content: center;
     grid-template-rows: .6fr 1fr;
     width:100vw;
     height: 100vh;
-    
-
 }
+
+#indiv_anime_body nav a{
+    text-decoration: none;
+    color: red;
+}
+
 #Anime_Title{
     font-weight: bold;
     font-size: larger;
@@ -432,7 +435,7 @@ span {
 .darkmode{
     background-color: black;
     color : white;
-    
+
 }
 .lightmode{
     background-color: white;
@@ -607,7 +610,7 @@ span {
     width: 400px;
     height: 200px;
     margin: 1em;
-    background-color: red;
+    background-color: beige;
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
