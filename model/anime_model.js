@@ -74,6 +74,7 @@ let add_to_userlist = (animeID, userID, date) => {
         return null;
     }
 };
+
 module.exports = {
     list_anime,
     add_anime,
@@ -83,5 +84,6 @@ module.exports = {
     fetch_user_anime_list,
     retrieve_anime_by_name,
     add_to_userlist,
-    get_anime_by_title
+    get_anime_by_title,
+    find_anime
 };
