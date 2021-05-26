@@ -2,6 +2,16 @@
     <title>AWA List</title>
 </head>
 
+<%
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let now = new Date();
+let yyyy = now.getFullYear();
+let mm = now.getMonth();
+let dd = now.getDate();
+if (dd < 10){ dd='0'+dd }
+let today = months[mm]+" "+dd+", "+yyyy;
+%>
+
 <body class="anime-list">
  <nav class="navbar">
      <div class="seachbar">
@@ -16,7 +26,7 @@
 <section class="animes">
     <div class="anime-header">
         <h2>Animes</h2>
-        <h2>May 17, 2021</h2>
+        <h2><%= today %></h2>
     </div>
     <div class="anime-overview">
         <h1>0</h1>
@@ -35,7 +45,7 @@
                     <div class="anime-desc">
                         <div class="anime-desc-header">
 <!--                            make date dynamic as well -->
-                            <p class="date">May 17, 2021</p>
+                            <p class="date"> <%= anime.date_Added %></p>
                             <a href=<%= "/listing/" + anime.ANI_ID %>></a>
                         </div>
                         <h3 class="anime-title"><%= anime.ANI_title %></h3>
