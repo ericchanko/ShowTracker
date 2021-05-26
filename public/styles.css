@@ -345,24 +345,29 @@ span {
     background-repeat: no-repeat;
     background-size: 1000px 1000px;
     color : black;
-    width:80vw;
-    height: 80vh;
+    position:relative;
+
 
 }
 #indiv_anime_container > div
 {
     grid-row:1;
     padding: 20px;
-
+    
 }
-#anime_background{
 
+#anime_background{
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 #indiv_anime_body{
     display: grid;
     justify-content: center;
-    grid-template-rows: 0.5fr 1fr;
+    grid-template-rows: .6fr 1fr;
+    width:100vw;
+    height: 100vh;
     
 
 }
@@ -375,16 +380,18 @@ span {
 #Anime_Picture > img
 {
     border-style: outset;
-    height: 300px;
-    width: 300px;
+    height: 376px;
+    width: 265px;
     position:relative;
     top:-40px;
 }
-
+#Anime_desc{
+    padding-top:30px;
+}
 #btnAdd_to_list {
     display: inline-block;
     border-radius: 4px;
-    background-color:#CC0000;
+    background-color:grey;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -421,67 +428,6 @@ span {
     right: 0;
   }
 
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-
 
 .darkmode{
     background-color: black;
@@ -493,7 +439,9 @@ span {
     color:black;
 }
 
-
+#dark_light_button{
+    font-size: 10px;
+}
 
 
 

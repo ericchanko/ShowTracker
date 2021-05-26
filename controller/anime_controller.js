@@ -15,7 +15,9 @@ let animeController = {
     },
 
     listing: (req, res) => {
-        res.render("anime/listing")
+        let animeID = req.params.id;
+        res.render("anime/listing", {anime: animeModel.find_anime(Number(animeID))})
+        
     },
 
     add: (req, res) => {
@@ -35,18 +37,19 @@ let animeController = {
         let today = months[mm]+" "+dd+", "+yyyy;
 
         // check if anime exists first
-        let aniID = animeModel.retrieve_anime_by_name(title).ANI_ID;
+        let aniID = animeModel.add_anime(title, desc, img);
         if (aniID) {
             console.log("anime already exists", aniID);
             animeModel.add_to_userlist(aniID, req.user.USR_ID, today);
         }
         else {
-            let aniID = animeModel.add_anime(title, desc, img);
+            aniID = animeModel.retrieve_anime_by_name(title).ANI_ID;
             console.log("This is new anime ID", aniID);
             animeModel.add_to_userlist(aniID, req.user.USR_ID,  today);
         }
         console.log(animeModel.fetch_user_animes(req.user.USR_ID));
         res.render("anime/list", {userAnimes: animeModel.fetch_user_animes(req.user.USR_ID)});
+
     }
 };
 

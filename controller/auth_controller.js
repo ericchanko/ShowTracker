@@ -33,6 +33,11 @@ let authController = {
         console.log("account successfully made");
         res.render("auth/login");
     },
+
+    logout: (req, res) => {
+        req.logout();
+        res.redirect("/")
+    }
 };
 
 module.exports = authController;
