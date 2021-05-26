@@ -48,7 +48,6 @@ let fetch_animes = (ANI_ID) => {
 let find_anime = (anime_id) => {
     try {
         let statement = db.prepare(`Select * from anime where ANI_ID = ${anime_id}`).get();
-        statement.anime_background_url = `"background-image: url(${statement.anime_background_url});"`;
         return statement;
     } catch (ReferenceError) { return null; }
 };
@@ -74,6 +73,7 @@ let add_to_userlist = (animeID, userID, date) => {
         return null;
     }
 };
+
 
 module.exports = {
     list_anime,

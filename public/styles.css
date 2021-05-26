@@ -355,10 +355,11 @@ span {
     padding: 20px;
 
 }
+/*
 #anime_background{
 
 
-}
+}*/
 #indiv_anime_body{
     display: grid;
     justify-content: center;
@@ -375,8 +376,8 @@ span {
 #Anime_Picture > img
 {
     border-style: outset;
-    height: 300px;
-    width: 300px;
+    height: 376px;
+    width: 265px;
     position:relative;
     top:-40px;
 }

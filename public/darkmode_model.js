@@ -5,11 +5,11 @@ const indiv_anime_container =document.getElementById("indiv_anime_container");
 const Anime_desc = document.getElementById("Anime_desc");
 const Anime_Title = document.getElementById("Anime_Title");
 const Anime_alias = document.getElementById("Anime_alias");
-dark_light_button.addEventListener("click",changeword);
+dark_light_button.addEventListener("click",darkmodetoggle);
 
 
 
-function changeword(){
+function darkmodetoggle(){
     if (dark_light_button.classList.contains("lightmode"))
     {
         indiv_anime_body.classList.toggle("lightmode");
