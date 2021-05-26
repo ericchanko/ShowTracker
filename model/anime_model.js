@@ -74,6 +74,15 @@ let add_to_userlist = (animeID, userID, date) => {
     }
 };
 
+let remove_user_anime = (userID, animeTitle) => {
+    let statement = db.prepare(`delete from Anime_List where Anime_List.USR_ID = ${userID} and Anime_List.ANI_ID = (select ANI_ID from anime where anime.ANI_title = "${animeTitle}")`);
+    if (statement.run(anime_id).changes === 1) {
+        return 'Anime removed from user_watchlist'
+    } else {
+        return null;
+    }
+};
+
 
 module.exports = {
     list_anime,
@@ -85,5 +94,6 @@ module.exports = {
     retrieve_anime_by_name,
     add_to_userlist,
     get_anime_by_title,
+    remove_user_anime,
     find_anime
 };
