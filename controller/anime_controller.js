@@ -29,6 +29,13 @@ let animeController = {
         let desc = req.body.description;
         let img = req.body.image;
 
+        let now = new Date();
+        let yyyy = now.getFullYear();
+        let mm = now.getMonth();
+        let dd = now.getDate();
+        if (dd < 10){ dd='0'+dd }
+        let today = months[mm]+" "+dd+", "+yyyy;
+
         // check if anime exists first
         let aniID = animeModel.add_anime(title, desc, img);
         if (aniID) {
@@ -40,6 +47,8 @@ let animeController = {
             console.log("This is new anime ID", aniID);
             animeModel.add_to_userlist(aniID, req.user.USR_ID,  today);
         }
+
+
         console.log(animeModel.fetch_user_animes(req.user.USR_ID));
         res.render("anime/list", {userAnimes: animeModel.fetch_user_animes(req.user.USR_ID), today: today});
     }

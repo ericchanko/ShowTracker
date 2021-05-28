@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-.homepage, .login-page {
+.homepage,
+.login-page {
     background-image: url("https://wallpaperaccess.com/full/2873577.png");
     width: 100vw;
     height: auto;
@@ -35,7 +35,10 @@ nav .menu-container {
     animation: enlargeMenuItem 1s forwards;
 }
 
-.container, .about, .anime, .register {
+.container,
+.about,
+.anime,
+.register {
     width: 100%;
     height: 100vh;
 }
@@ -98,14 +101,12 @@ nav .menu-container {
     right: -0.5em;
 }
 
-
 .button {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 108px;
     text-align: center;
-
     font-size: 18px;
     text-decoration: none;
     color: white;
@@ -149,11 +150,12 @@ nav .menu-container {
     grid-row: 2/3;
     margin-left: 2em;
     /*place holder pic until we get smthn better*/
-    background-image: url("https://i.guim.co.uk/img/media/02088fb2247b13df646907d47f552dc69a236bc7/0_748_3235_1940/master/3235.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=172ccbaa7535c9e16d0455138d20a07c");
+    background-image: url("https://www.desktopbackground.org/download/o/2014/11/22/859991_gin-ichimaru-bleach-minimalist-wallpapers-by-greenmapple17-on_1024x576_h.png");
 }
 
 
 /* ================ Login Page CSS - ===========*/
+
 .login-page {
     background-image: url("https://getwallpapers.com/wallpaper/full/8/6/5/419846.jpg");
     display: grid;
@@ -170,7 +172,8 @@ nav .menu-container {
     text-decoration: none;
 }
 
-.login-container, .login-desc-box {
+.login-container,
+.login-desc-box {
     display: flex;
     align-content: center;
 }
@@ -216,7 +219,7 @@ nav .menu-container {
     margin-bottom: 0;
 }
 
-h1 + p {
+h1+p {
     margin-top: 0;
 }
 
@@ -234,7 +237,8 @@ h1 + p {
     color: darkgrey;
 }
 
-#password, #submit {
+#password,
+#submit {
     margin-top: 1em;
 }
 
@@ -294,6 +298,8 @@ span {
     color: white;
     margin-top: 1em;
 }
+
+
 /* ================ Register Page CSS -  ===========*/
 
 .register {
@@ -308,9 +314,11 @@ span {
     margin-bottom: 1em;
 }
 
+
 /* ================ Anime List Page CSS -  ===========*/
 
-.anime-nav, .anime-cards {
+.anime-nav,
+.anime-cards {
     width: 95%;
     display: flex;
     align-items: center;
@@ -324,24 +332,22 @@ span {
     color: black;
 }
 
+
 /* Individual Anime page CSS*/
 
-
-#indiv_anime_container
-{
+#indiv_anime_container {
     display: flex;
     background-repeat: no-repeat;
     background-size: 1000px 1000px;
-    position:relative;
+    position: relative;
 }
-#indiv_anime_container > div
-{
-    grid-row:1;
+
+#indiv_anime_container>div {
+    grid-row: 1;
     padding: 20px;
-
 }
 
-#anime_background{
+#anime_background {
     background-size: 90%;
     background-position: center;
     background-repeat: no-repeat;
@@ -349,7 +355,7 @@ span {
 
 .dark {
     background-color: #1f3240;
-    color : white;
+    color: white;
 }
 
 .light {
@@ -357,98 +363,96 @@ span {
     color: black;
 }
 
-
-
-
-#indiv_anime_body{
+#indiv_anime_body {
     font-family: 'Open Sans', sans-serif;
     display: grid;
     justify-content: center;
     grid-template-rows: .6fr 1fr;
-    width:100vw;
+    width: 100vw;
     height: 100vh;
 }
 
-#indiv_anime_body nav a{
+#indiv_anime_body nav a {
     text-decoration: none;
     color: red;
 }
 
-#Anime_Title{
+#Anime_Title {
     font-weight: bold;
     font-size: larger;
-    position:relative;
-    top:-40px;
+    position: relative;
+    top: -40px;
 }
-#Anime_Picture > img
-{
+
+#Anime_Picture>img {
     border-style: outset;
     height: 376px;
     width: 265px;
-    position:relative;
-    top:-40px;
+    position: relative;
+    top: -40px;
 }
-#Anime_desc{
-    padding-top:30px;
+
+#Anime_desc {
+    padding-top: 30px;
 }
+
 #btnAdd_to_list {
     display: inline-block;
     border-radius: 4px;
-    background-color:grey;
+    background-color: grey;
     border: none;
     color: #FFFFFF;
     text-align: center;
     font-size: 28px;
     width: 200px;
-    height:50px;
+    height: 50px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
-  }
+}
 
-  #btnAdd_to_list span {
+#btnAdd_to_list span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.1s;
-  }
+}
 
-  #btnAdd_to_list span:after {
+#btnAdd_to_list span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-  }
+}
 
-  #btnAdd_to_list:hover span {
+#btnAdd_to_list:hover span {
     padding-right: 25px;
-  }
+}
 
-  #btnAdd_to_list:hover span:after {
+#btnAdd_to_list:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
 
-
-.darkmode{
+.darkmode {
     background-color: black;
-    color : white;
-
+    color: white;
 }
-.lightmode{
+
+.lightmode {
     background-color: white;
-    color:black;
+    color: black;
 }
 
-#dark_light_button{
+#dark_light_button {
     font-size: 10px;
 }
 
 
-
 /* CSS animation keyframes */
+
 @keyframes mainBlock {
     0% {
         width: 0;
@@ -492,7 +496,9 @@ span {
     }
 }
 
+
 /* list index view*/
+
 .anime-list {
     width: 100vw;
     height: auto;
@@ -543,14 +549,15 @@ span {
     border: none;
 }
 
-.searchbar *, .navbar * {
+.searchbar *,
+.navbar * {
     margin: 0.8em;
     align-self: center;
     text-decoration: none;
 }
 
 .animes {
-    margin-top:5em;
+    margin-top: 5em;
     width: 80vw;
     height: 80vh;
     background-color: #FFF;
@@ -627,7 +634,9 @@ span {
     margin: 0.2em;
 }
 
+
 /* ================ Add Anime Page ================ */
+
 .add-ani {
     background-image: url("https://img4.goodfon.com/wallpaper/nbig/1/e2/rogue-cheney-minimalistic-by-greenmapple17-fairy-tail-anime.jpg");
     font-family: 'DM Sans', sans-serif;
@@ -651,7 +660,9 @@ span {
     height: 70vh;
 }
 
-.title-submission input, .desc-submission input, .img-submission input  {
+.title-submission input,
+.desc-submission input,
+.img-submission input {
     width: 60vw;
     height: 20px;
     margin-top: 1em;
@@ -675,5 +686,3 @@ span {
     border-radius: 2px;
     background-color: lightsalmon;
 }
-
-
