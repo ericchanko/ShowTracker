@@ -1,4 +1,4 @@
-Anime Watchlist Application or AWA for short is a a modern list application made for keeping track of your favourite animes. <br/>
+Showtracker is a a modern list application made for keeping track of your favourite shows. <br/>
 It is currently deployed here: <i>https://acit2911-tp.herokuapp.com/</i>
 
 In its current state, it offers:
@@ -7,7 +7,7 @@ In its current state, it offers:
 - Creating your own account through local or Google login
 - Adding personal animes and 
 - List page that: <br/>
-      1. Dynamically lists your animes<br/>
+      1. Dynamically lists your shows<br/>
       2. Keeps track of total amount of shows currently<br/>
       3. Lists current date in the top right<br/>
       4. Logging out<br/>
@@ -18,8 +18,8 @@ What a listing page may look like:
 
 In its future state, we plan to offer:
 - Security Features (better authenticating features)
-- Removing Animes
-- Updating animes
+- Removing shows
+- Updating shows
 - Show tags
 - Updating show tags
 - A showcase of our databases entire 
